@@ -1,0 +1,81 @@
+<?php
+// Connect to the database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "suraj";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Check if form was submitted
+    if(isset($_POST['submit'])) {
+        
+        // Prepare the SQL statement to insert data into the events table
+        $stmt = $conn->prepare("INSERT INTO UserInfo ()
+                                VALUES ()");
+
+        // Bind the form data to the SQL statement parameters
+       
+        $stmt->bindParam(':passwords', $_POST['passwords']);
+        
+      
+
+        // Execute the SQL statement
+        $stmt->execute();
+        
+        // Redirect to the home page or a success page
+        header("Location:http://localhost/2ndhtml/popup.html");
+        exit();
+    }
+}
+catch(PDOException $e) {
+    // Handle errors
+    echo "Error: " . $e->getMessage();
+}
+$conn = null;
+?>
+
+
+
+
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>e-Voting System</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body background="https://assets.thehansindia.com/h-upload/feeds/2019/04/02/159676-vote.jpg" style='background-size:100%'>
+
+    <div class="hero">
+        <div class="navbar">
+        <img src="https://i.pinimg.com/564x/8b/38/32/8b3832d145f8e8c8b6bab8d966fc5a77.jpg">
+        <ul>
+        
+        </div>
+
+
+<font size="30"><u><h1>Cast Your Vote</u>:-</font><br><br>
+    
+<form method="POST" enctype="multipart/form-data">
+		
+
+		<label>FOR *** SEAT:</label>
+		<input type="file" name="aadhaar_file" required>
+		<br><br>
+
+
+		<input type="submit" name="submit" value="Register"><br><br>
+
+    
+  </form>
+    
+      
+           
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alert Box Redirect</title>
+  <script>
+    window.onload = function() {
+      alert("Thank you for casting your valuable vote.");
+      window.location.href = "http://localhost/2ndhtml/add_events2.php"; // Replace with your desired URL
+    };
+  </script>
+</head>
+<body>
+</body>
+</html>
